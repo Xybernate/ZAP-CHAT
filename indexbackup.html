@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class=" js no-touch">
+
+<head>
+
+  <title>Music Jamz | Make the Noise</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/w3v4.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
+ 
+   <!-- icon logo -->
+ <link rel="icon" type="image/jpg" href="logo/logoicon.jpg" />
+  <link rel="stylesheet" type="text/css" href="css/mediaqueriescss.css">
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <link href="css/aos.css" rel="stylesheet" type="text/css" media="all" />
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+ 
+ 
+</head>
+
+<body>
+
+  <div  class="w3-top">
+
+   <div id="topNav"  class="w3-bar w3-black w3-border-bottom w3-border-white">
+
+     <a   style="vertical-align:center;color:white;text-decoration:none;cursor:pointer;"  href="#" class="w3-bar-item w3-button  w3-hover-text-light-grey    w3-hover-none largeIcons">MvelaMusic</a> 
+	
+     <a  id="backtomainstageButton"   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button  w3-hover-text-light-grey  largeIcons"><i class="fa fa-home"></i></a> 
+  
+     <a id="register"    style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-right w3-hover-text-light-grey  largeIcons"><i class="fa fa-user-plus"></i></a> 
+     
+	 <a  id="login"   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-right w3-hover-text-light-grey  largeIcons"><i class="fa fa-sign-in"></i></a> 
+ 
+ 
+   </div>
+   
+   <div id="searchContainer" class="w3-bar w3-padding" style="background:white;margin-left:5%;">
+
+    <input style="width:92.5%;margin-left:1%;margin-right:0.5%;" placeholder="Search music by title or artist" id="searchButton" class="w3-input w3-border">
+	
+   </div>
+ 
+</div>
+
+  <script>
+
+   $.ajax({
+			
+	     url: "process/sessioncheck.php"
+	             
+	
+     }).done(function(data) {
+	
+        var loginDetails = JSON.parse(data);
+		   
+         if(loginDetails.loggedinStatus==='loggedin' &&  loginDetails.loggedinUserType==='Admin'){
+
+		     $('#logout').css('display','inline');
+             $('#register').css('display','none');
+             $('#login').css('display','none'); 
+			 $('#administratorPortal').css('display','inline'); 
+			 $('#uploadButton').css('display','inline'); 
+			
+		  		   
+         } else if (loginDetails.loggedinStatus==='loggedin' &&  loginDetails.loggedinUserType==='Standard') {
+	   
+	         $('#logout').css('display','inline');
+             $('#register').css('display','none');
+             $('#login').css('display','none'); 
+			
+	         
+         }	else {
+
+           
+		 
+        }		 
+		
+					
+      });
+
+
+</script>
+
+  <div id="leftBar" class="w3-bar-block w3-black"   style="height:600px;position:fixed;top:52px;width:5%;">
+ 
+   <a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey  w3-margin-top  largeIcons leftLinks"><i class="fa fa-refresh"></i></a> 
+   <a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey  largeIcons leftLinks"><i class="fa fa-phone"></i></a> 
+   <a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey  largeIcons leftLinks"><i class="fa fa-envelope"></i></a> 
+	
+ 
+ </div>
+
+  <div class="w3-row w3-border-top w3-border-lightgrey" style="margin-top:51px;margin-left:5%;">
+
+<div  class="w3-col l12 m12 s12">
+
+    <div  id="mainContainer" class="w3-padding" style="margin-top:40px;">
+  
+   <div style="display:none;" data-aos="zoom-in" id="clickedSong" class="w3-row w3-mobile">
+   
+    
+	  <div class="w3-section w3-margin-bottom">
+	  
+	     
+		 <div  id="clickedsongImage" class="w3-row w3-mobile" style=""></div>
+		 				
+	  </div>
+   
+   
+   </div>
+
+    <div data-aos="zoom-in"  id="latestsongsHeading" class="w3-row  w3-border-bottom w3-border-black w3-margin-top"><h4>Latest Muisc <strong style="color:orange;" class="">Latest!!</strong></h4></div>
+   
+    <div   id="latestmusic" class="w3-row w3-mobile"></div>   
+   
+    <div  data-aos="zoom-in" style="" id="topmostDownloadsHeading" class="w3-row  w3-border-bottom w3-border-black w3-margin-top"></div>
+
+   <div   id="hotmusic" class="w3-row w3-mobile"></div>   
+ 
+ 
+</div>
+
+    <div id="uploadContainter"  class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	    <header class="">
+	
+	     <div class="w3-center"><br>
+		 
+          <h4><i class="fa fa-user"></i>Upload New Song</h4> <span  id="closecreateUserAccountBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	   </header>
+	
+	   <form class="" id="uploadform" action="uploadfiles.php" method="POST" enctype="multipart/form-data">
+	  
+	    <div class="w3-row">
+		
+		  <div class="w3-col l12 m12 s12 w3-padding">
+		  
+		    <div class="w3-row">
+			
+			 <div class="w3-col l4 m12 s12 w3-padding">
+			 
+		      <div class="w3-section">
+		 
+			     <input class="w3-input w3-border" type="text" name="title" id="title" placeholder="Enter the title of the song">
+			     <label class="Error"  id="titleError" style="font-weight:normal;color:red;"></label>
+					
+		      </div>
+			  
+			  </div>
+			  
+			  <div class="w3-col l4 m12 s12 w3-padding">
+	  
+	          <div class="w3-section">
+		 		 
+			     <input class="w3-input w3-border" type="text" name="artist" id="artistFullName" placeholder="Enter artist name">
+			     <label class="Error"  id="artistError" style="font-weight:normal;color:red;"></label>
+						
+		      </div>
+			  
+			  </div>
+			  
+			  <div class="w3-col l4 m12 s12 w3-padding">
+		 
+		      <div class="w3-section">
+		 		   
+			     <input class="w3-input w3-border" type="text" name="album" id="album" placeholder="Enter album name ( i.e single)">
+			     <label class="Error"  id="albumError" style="font-weight:normal;color:red;"></label>
+						
+		       </div>
+			   
+			  </div>
+			
+			</div>
+	  
+		  </div>
+		
+		  <div class="w3-col l12 m12 s12 w3-padding">
+		  
+		    
+	     <div class="w3-section">
+		 
+		    <label  style="font-weight:normal;">Upload Image</label>
+			<input class="w3-input" type="file" name="image_file" id="image_file">
+			 <label  class="Error"  id="imageError" style="font-weight:normal;color:red;"></label>
+			
+		 </div>
+		 
+		  <div class="w3-section">
+		 
+		    <label style="font-weight:normal;">Upload Song</label>
+			<input class="w3-input" type="file" name="song_file" id="song_file">
+			 <label class="Error" id="songError" style="font-weight:normal;color:red;"></label>
+			
+		 </div>
+		 
+		
+		  
+		  </div>
+		
+		</div>
+	     
+	   
+		 <div class="w3-row"><div class="w3-section" id="progressBar"  style="height:40px;display:none;padding-top:15px;padding-bottom:15px;line-height:10px;"></div></div>
+		
+		 <div class="w3-row"><div class="w3-section" id="statusBar"  style=""></div></div>
+		 
+		 
+	  
+	     <button  type="submit" name="Submit" value="Submit" id="uploadbutton" class="w3-btn w3-black w3-margin-bottom" style="background-color;green;width:100%;">Upload</button>
+		  
+	  
+	  </form> 
+	
+	
+	</div>
+
+    <div id="createnewUserContainter"  class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	 <div class="w3-container">
+	 
+	   <header class="">
+	
+	     <div class="w3-center"><br>
+		 
+          <h4><i class="fa fa-user"></i>Create Your Account</h4> <span  id="closecreateUserAccountBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	   </header>
+	
+	 <form  id="createUserAccountForm">
+	
+	   <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="username" placeholder="Enter your username">
+		 
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="usernameError"></label>
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="notavailableStatus"></label>
+		 <label style="font-weight:normal;color:green;" class="AccountError" id="availableStatus"></label>
+		 
+	   </div>
+	
+	     <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="pass" placeholder="Enter your password">
+		  <label style="font-weight:normal;color:red;" class="AccountError" id="passError"></label>
+		 
+		 
+	   </div>
+	   
+	   <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="phone" placeholder="Enter your mobile phone number">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="phoneError"></label>
+		 
+		 
+	   </div>
+	   
+	    <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="location" placeholder="Enter your location">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="locationError"></label>
+		 
+		 
+	   </div>
+	   
+	     <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="email" placeholder="Enter your email">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="emailError"></label>
+		 
+		 
+	   </div>
+	   
+	   <div class="w3-section" ><label style="font-weight:normal;color:red;" id="responseError" class="" ></label></div>
+	   
+	   <div class="w3-section" ><label style="font-weight:normal;color:blue;" id=""  id="">Ensure your username is available in order to post your details</label></div>
+	   
+	   <button id="createaccountButton" style="width:100%;" class="w3-btn w3-margin-top w3-margin-bottom w3-black w3-right" disabled>Create Account</button>
+	
+	   	  
+	 </form>
+	 
+	</div>	  
+	  
+	
+	</div>
+	
+    <div id="loginContainter" class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	<div class="w3-container">
+	
+	<header>
+	
+	    <div class="w3-center"><br>
+		 
+          <h3><i class="fa fa-lock"></i>Login</h3> <span  id="closeloginBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	    </header>
+	
+	 <form  id="loginForm">
+	
+	    <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="loginuser" placeholder="Enter your valid username">
+		 <label style="font-weight:normal;color:red;" class="loginError" id="loginuserError"></label>
+		 
+	   </div>
+	
+	    <div class="w3-section" >
+		
+	     <input type="text" class="w3-input" id="loginpass" placeholder="Enter your valid password">
+		 <label style="font-weight:normal;color:red;" class="loginError" id="loginpassError"></label>
+		 
+	   </div>
+	   
+	   <div class="w3-section" > <label style="font-weight:normal;color:red;" class="loginError" id="loginresponseError"></label></div>
+	  
+	   
+	   <button id="loginButton" style="width:100%;" class="w3-btn w3-margin-bottom w3-black w3-right">Enter</button>
+	
+	   	  
+	 </form>
+	 
+	</div>	  
+	    
+	  
+	
+	</div>
+
+	
+</div>
+
+<!--- Beginning of  upload form up  modal beginning --->
+
+<audio id="audioPlayer"></audio>
+
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>  
+<script type="text/javascript" src="js/aos.js"></script>
+<script type="text/javascript" src="js/jquery.slide.js"></script>
+
+<script>
+  
+    AOS.init();
+  
+</script>
+
+<script type="text/javascript" src="js/process.js"></script>
+
+
+</body>
+
+</html>

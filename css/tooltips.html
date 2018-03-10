@@ -1,0 +1,49 @@
+<a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey w3-margin-top  largeIcons leftLinks">
+  <i class="fa fa-refresh"></i>
+</a> 
+<a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey  largeIcons leftLinks">
+  <i class="fa fa-phone"></i>
+</a> 
+
+
+<a   style="vertical-align:center;color:white;text-decoration:none;"  href="#" class="w3-bar-item w3-button w3-hover-text-light-grey  largeIcons leftLinks">
+  <i class="fa fa-envelope"></i>
+</a> 
+
+
+
+.leftLinks  i .tooltip {
+   display:inline-block;   
+   position:relative;
+   border-bottom:1px dotted white;
+}
+
+.leftLinks  i .tooltiptext {
+   display:inline-block;
+   min-width:200px;
+   background:white;
+   color:yellow;
+   border-radius:6px;
+   padding:5px 0;
+   position:absolute;
+   z-index:60;
+   left:110%;
+}
+
+.tooltip  .tooltiptext:: after {
+    content:"";
+	position:absolute;
+	top:50%;
+	right:100%;
+	margin-top:5px;
+	border-width:5px;
+	border-style:solid;
+	border-color:transparent white transparent transparent;
+	
+}
+
+
+.leftLinks  i .tooltip:hover  .tooltiptext{
+   display:inline-block;   
+   
+}

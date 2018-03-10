@@ -1,0 +1,236 @@
+ 
+ <div class="w3-row"   style="margin-top:60px;">
+ 
+ 
+    <table id="songsfortheAdmin" class="w3-table w3-striped">
+    
+	<tr>
+        <th>Song ID</th>
+	    <th>Song Name</th>
+	    <th>Artist</th>
+	    <th>Album</th>
+	    <th>Downloads</th>
+	    <th>Status</th>
+    </tr>
+	
+</table>
+
+ </div>
+ 
+ 
+ 
+<div id="uploadContainter"  class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	    <header class="">
+	
+	     <div class="w3-center"><br>
+		 
+          <h4><i class="fa fa-user"></i>Upload New Song</h4> <span  id="closecreateUserAccountBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	   </header>
+	
+	   <form class="" id="uploadform" action="uploadfiles.php" method="POST" enctype="multipart/form-data">
+	  
+	    <div class="w3-row">
+		
+		  <div class="w3-col l12 m12 s12 w3-padding">
+		  
+		    <div class="w3-row">
+			
+			 <div class="w3-col l4 m12 s12 w3-padding">
+			 
+		      <div class="w3-section">
+		 
+			     <input class="w3-input w3-border" type="text" name="title" id="title" placeholder="Enter the title of the song">
+			     <label class="Error"  id="titleError" style="font-weight:normal;color:red;"></label>
+					
+		      </div>
+			  
+			  </div>
+			  
+			  <div class="w3-col l4 m12 s12 w3-padding">
+	  
+	          <div class="w3-section">
+		 		 
+			     <input class="w3-input w3-border" type="text" name="artist" id="artistFullName" placeholder="Enter artist name">
+			     <label class="Error"  id="artistError" style="font-weight:normal;color:red;"></label>
+						
+		      </div>
+			  
+			  </div>
+			  
+			  <div class="w3-col l4 m12 s12 w3-padding">
+		 
+		      <div class="w3-section">
+		 		   
+			     <input class="w3-input w3-border" type="text" name="album" id="album" placeholder="Enter album name ( i.e single)">
+			     <label class="Error"  id="albumError" style="font-weight:normal;color:red;"></label>
+						
+		       </div>
+			   
+			  </div>
+			
+			</div>
+	  
+		  </div>
+		
+		  <div class="w3-col l12 m12 s12 w3-padding">
+		  
+		    
+	     <div class="w3-section">
+		 
+		    <label  style="font-weight:normal;">Upload Image</label>
+			<input class="w3-input" type="file" name="image_file" id="image_file">
+			 <label  class="Error"  id="imageError" style="font-weight:normal;color:red;"></label>
+			
+		 </div>
+		 
+		  <div class="w3-section">
+		 
+		    <label style="font-weight:normal;">Upload Song</label>
+			<input class="w3-input" type="file" name="song_file" id="song_file">
+			 <label class="Error" id="songError" style="font-weight:normal;color:red;"></label>
+			
+		 </div>
+		 
+		
+		  
+		  </div>
+		
+		</div>
+	     
+	   
+		 <div class="w3-row"><div class="w3-section" id="progressBar"  style="height:40px;display:none;padding-top:15px;padding-bottom:15px;line-height:10px;"></div></div>
+		
+		 <div class="w3-row"><div class="w3-section" id="statusBar"  style=""></div></div>
+		 
+		 
+	  
+	     <button  type="submit" name="Submit" value="Submit" id="uploadbutton" class="w3-btn w3-black w3-margin-bottom" style="background-color;green;width:100%;">Upload</button>
+		  
+	  
+	  </form> 
+	
+	
+	</div>
+
+<div id="createnewUserContainter"  class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	 <div class="w3-container">
+	 
+	   <header class="">
+	
+	     <div class="w3-center"><br>
+		 
+          <h4><i class="fa fa-user"></i>Create Your Account</h4> <span  id="closecreateUserAccountBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	   </header>
+	
+	 <form  id="createUserAccountForm">
+	
+	   <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="username" placeholder="Enter your username">
+		 
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="usernameError"></label>
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="notavailableStatus"></label>
+		 <label style="font-weight:normal;color:green;" class="AccountError" id="availableStatus"></label>
+		 
+	   </div>
+	
+	     <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="pass" placeholder="Enter your password">
+		  <label style="font-weight:normal;color:red;" class="AccountError" id="passError"></label>
+		 
+		 
+	   </div>
+	   
+	   <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="phone" placeholder="Enter your mobile phone number">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="phoneError"></label>
+		 
+		 
+	   </div>
+	   
+	    <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="location" placeholder="Enter your location">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="locationError"></label>
+		 
+		 
+	   </div>
+	   
+	     <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="email" placeholder="Enter your email">
+		 <label style="font-weight:normal;color:red;" class="AccountError" id="emailError"></label>
+		 
+		 
+	   </div>
+	   
+	   <div class="w3-section" ><label style="font-weight:normal;color:red;" id="responseError" class="" ></label></div>
+	   
+	   <div class="w3-section" ><label style="font-weight:normal;color:blue;" id=""  id="">Ensure your username is available in order to post your details</label></div>
+	   
+	   <button id="createaccountButton" style="width:100%;" class="w3-btn w3-margin-top w3-margin-bottom w3-black w3-right" disabled>Create Account</button>
+	
+	   	  
+	 </form>
+	 
+	</div>	  
+	  
+	
+	</div>
+	
+<div id="loginContainter" class="w3-padding w3-card w3-border w3-border-grey   largeScreenForm" style="display:none;">
+	
+	<div class="w3-container">
+	
+	<header>
+	
+	    <div class="w3-center"><br>
+		 
+          <h3><i class="fa fa-lock"></i>Login</h3> <span  id="closeloginBox" class="w3-button w3-xlarge w3-hover-red w3-display-topright"  style="color:red;">&times;</span>
+			
+	     </div>
+	
+	    </header>
+	
+	 <form  id="loginForm">
+	
+	    <div class="w3-section" >
+	   
+	     <input type="text" class="w3-input" id="loginuser" placeholder="Enter your valid username">
+		 <label style="font-weight:normal;color:red;" class="loginError" id="loginuserError"></label>
+		 
+	   </div>
+	
+	    <div class="w3-section" >
+		
+	     <input type="text" class="w3-input" id="loginpass" placeholder="Enter your valid password">
+		 <label style="font-weight:normal;color:red;" class="loginError" id="loginpassError"></label>
+		 
+	   </div>
+	   
+	   <div class="w3-section" > <label style="font-weight:normal;color:red;" class="loginError" id="loginresponseError"></label></div>
+	  
+	   
+	   <button id="loginButton" style="width:100%;" class="w3-btn w3-margin-bottom w3-black w3-right">Enter</button>
+	
+	   	  
+	 </form>
+	 
+	</div>	  
+	    
+	  
+	
+	</div>
+
+	
+<audio id="audioPlayer"></audio>

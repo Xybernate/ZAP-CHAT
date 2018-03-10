@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.xybernate.ilf"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>  ILF Zambia</name>
+
+  <description>
+     International Leadership Foundation Zambia 
+  </description>
+
+   <access origin="*"/>
+ <author href="https://xybernate.com" email="ilf@xybernate.com">
+      Ngenda Muliwana
+  </author>
+   <icon src="icon.png"/>
+   
+   	 
+   <preference name="SplashScreen" value="screen"/>
+   <preference name="SplashScreenDelay" value="3000" />
+   
+   <splash src="splash.png" />
+   
+	<preference name="StatusBarOverlaysWebView" value="true" />
+ <preference name="StatusBarBackgroundColor" value="#004D40" />
+   
+	<plugin name="cordova-plugin-statusbar" src="npm" spec="~2.2.3" />
+	
+</widget>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body>
+    <div class="subBody" style="width:100%;">
+
+
+
+        <!---START FAB --->
+
+        <div id="container-floating">
+
+            <div class="nd5 nds" data-toggle="tooltip"  id="get_local_books" data-placement="left" data-original-title="books">
+
+            </div>
+
+            <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="">
+                <img class="reminder">
+                <p class="letter"><span class="fa fa-map-marker"></span></p>
+            </div>
+            <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder">
+                <p class="letter"><span class="fa fa-pencil"></span></p>
+            </div>
+
+            <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it">
+                <img class="reminder">
+                <p class="letter"><span class="fa fa-shopping-cart"></span></p>
+            </div>
+
+            <div id="floating-button" data-toggle="tooltip" data-placement="left">
+                <p class="plus "> + </p>
+                <span class="edit ion-close-round" style="margin-top:7px;margin-left:16px;color:#fff;">
+	
+	</span>
+            </div>
+
+        </div>
+
+
+        <!---START FAB --->
+
+
+
+        <!---   START OF: top nav 1 --->
+        <div id="top" class="topNav w3-top" style="width:100%;position:fixed;border:none;height:35px;background-color:#036696;z-index:9999999999999999999999999999999;">
+
+
+
+        </div>
+
+
+        <!---   // END OF:: top nav 1 --->
+
+        <!---   START OF: top nav 2--->
+
+        <div class="w3-row topNav2" style="background-color:#036696;margin-top:33px;height:35px;">
+
+
+            <div class="w3-col l4 m4 s4" id="getmedia" style="line-height:43px;border-radius:2px;height:27px;color:#d9d9d9;font-weight:800;font-family:segoe ui light;margin-bottom:1px;text-align:center;">
+                Library
+
+            </div>
+            <div class="w3-col l4 m4 s4" id="getevents" style="line-height:43px;border-radius:2px;height:27px;color:#d9d9d9;font-weight:800;font-family:segoe ui light;margin-bottom:1px;text-align:center;">
+                Events
+            </div>
+            <div class="w3-col l4 m4 s4" id="editorial" style="line-height:43px;border-radius:2px;height:27px;color:#d9d9d9;font-weight:800;font-family:segoe ui light;margin-bottom:1px;text-align:center;">
+                Editorial
+            </div>
+        </div>
+
+        <div class="w3-row" style="margin-top:0px;">
+
+            <div id="contentColumn" class="w3-col l12 m12 s12">
+
+                <div id="mainContainer" class="mainContainer" style="margin-top:0px;">
+
+
+                    <!---End of signup form modal --->
+
+
+
+                    <form id="loginForm" style="padding:4%;">
+
+
+                        <label style="font-weight:normal;color:red;" class="loginError" id="loginresponseError"></label>
+
+                        <div class="w3-section">
+                            <label style="font-weight:normal;color:red;"> Username</label>
+
+                            <br/>
+                            <input type="text" class="" id="loginuser" placeholder="Enter your valid username" style="width:95%;"> <br/>
+
+                        </div>
+
+                        <div class="w3-section">
+                            <label style="font-weight:normal;color:red;"> Password</label>
+                            <br/>
+                            <input type="text" class="" id="loginpass" placeholder="Enter your valid password" style="width:95%;"> <br/>
+
+                        </div>
+
+                        <center>
+                            <button class="w3-btn" id="loginButton" type="submit" style="background-color:green;border-radius:20px;max-width:175px;width:85%;border: 1px solid #fff;color:#fff;height:38px;"> Login</button>
+                        </center>
+
+                        <div class="w3-section">
+                            <center>
+                                <a href="#" class="w3-btn" onclick="document.getElementById('signupmodal').style.display='block'" style="background-color:#036696;border-radius:4px;">
+                                    <span class="fa fa-pencil"></span> Creat Account
+                                </a>
+                                <br/>
+
+                                <p class="" style="border:8px;margin-bottom:20px;margin-top:15px;"> Forgot Password?</p>
+
+                            </center>
+
+                        </div>
+                    </form>
+
+
+
+
+                    <div style="display:none;" data-aos="zoom-in" id="clickedSong" class="w3-row w3-mobile">
+
+
+                        <div class="w3-section w3-margin-bottom">
+
+
+                            <div id="clickedsongImage" class="w3-row w3-mobile " style=""></div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- //slid -->
+                <div class="container">
+
+                    <div class="">
+                        <p>© 2017 Rose Petals Spa. | Design by <a href="http://cybernatesystems.com">Xybernate Systems</a></p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <audio id="audioPlayer"></audio>
+
+
+
+            <!--- Beginning  SIDE NAV--->
+
+
+
+            <div id="myNav" class="overlay w3-card-4" style="max-width:300px;z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;">
+
+
+                <div class="overlay-content">
+
+
+                    <div class="w3-card-2 w3-display-container" style="height:150px;margin-bottom:0px;">
+                        <img src="<?php echo $_SESSION['_imagePath'];  ?>" alt="user profile" style="height:150px;width:100%;" />
+
+                        <div class="w3-display-topright w3-container " style="height:150px;width:100%;color:#fff;background-color:rgba(0,0,0,0.3);">
+<a href="#">
+<span class="fa fa-camera" style="font-size:18px;color:rgba(0,0,1,0.4);float:right;width:8px;height:8px;border-radius:50%;margin-right:10px;"><span/> 
+</span>
+</a>
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >
+<span class="fa fa-arrow-left" style="color:#fff;font-size:18px;float:left;width:11px;height:11px;margin-left:-10px;margin-top:-18px;"><span/> 
+</span>
+</a>
+</div>
+
+     
+<div class="w3-display-bottomright w3-container" style="padding-top:6px;padding-bottom:6px;width:100%;color:#fff;background-color:rgba(0,0,0,0.4);">
+ <strong style="color:#0099cc;;"><?php echo $_SESSION['_Username'];  ?></strong> 
+ <span class="fa fa-pencil" style="float:right;border-radius:50%;font-size:1.1em"> </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <a href="#" onclick="closeNav()" id="get_local_books" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/book.png" style="width:23px;height:23px;" />
+
+                        <span class="w3-animate-zoom" style=""> My Books</span>
+                    </a>
+
+
+                   
+
+                    <a href="#" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                          <span class="ion-android-cart" style="width:23px;height:23px;"></span>
+                        
+
+                        <span class="w3-animate-zoom" style="margin-left:"> Shopping  Cart</span>
+                    </a>
+                    <a href="#" id="getuploadform" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/music.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom">  Upload Music</span>
+                    </a>
+
+                    <a href="#" id="sermonbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/preach.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom">  Upload Sermon</span>
+                    </a>
+
+                    <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/events.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom">  Create Event </span>
+                    </a>
+                    <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/adds.jpg" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom"> Advertise</span>
+                    </a>
+                    <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/edit.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom"> Contact us</span>
+                    </a>
+ <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/edit.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom">  Editorial </span>
+                    </a>
+
+                    <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/edit.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom"> Distributers </span>
+                    </a>
+                    <a href="#" id="eventbtn" onclick="closeNav()" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <img src="img/settings2.png" style="width:23px;height:23px;" />
+                        <span class="w3-animate-zoom"> Settings </span>
+                    </a>
+                    <a href="#" id="logout" style="color:#34495e;font-size:16px;font-weight:400;text-decoration:none;margin-left:0px;">
+                        <span class="ion-log-out" style="width:23px;height:23px;"></span>
+                        <span class="w3-animate-zoom">     Log Out</span>
+                    </a>
+
+
+                    <hr/>
+                    <center>
+
+
+                        <div style="margin-top:7px;">
+
+                            <a href="#" id="logout" style="color:#34495e;font-size:10px;font-weight:400;text-decoration:none;margin-left:18px;">
+                                <span class="w3-animate-zoom"> &copy: Zambia Adventist Press Ltd</span>
+                            </a>
+                        </div>
+                    </center>
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div id="loginmodal" class="w3-modal" style="margin-top:;background-color:rgba(0, 0, 0, 0.7);z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" class="upload-form" style="max-width:30em;position:relative;background-color:#fff;">
+
+                    <div class="w3-center" style="background-color:#036696;padding-bottom:15px;">
+
+                        <span onclick="document.getElementById('loginmodal').style.display='none'" class="w3-button w3-hover-red w3-display-topright" title="Close 
+              Modal" style="background-color:transparent;color:red;font-size:1.8em;">&times;</span>
+                        <br/>
+                        <h3 style="color:#fff;font-family:segoe ui light;margin-bottom:20px;margin-top:10px;text-transform:uppercase;">
+                            LOGIN
+                        </h3>
+
+                    </div>
+
+
+                    <form id="loginForm" style="padding:4%;">
+
+
+                        <label style="font-weight:normal;color:red;" class="loginError" id="loginresponseError"></label>
+
+                        <div class="w3-section">
+                            <label style="font-weight:normal;color:red;"> Username</label>
+
+                            <br/>
+                            <input type="text" class="" id="loginuser" placeholder="Enter your valid username" style="width:95%;"> <br/>
+
+                        </div>
+
+                        <div class="w3-section">
+                            <label style="font-weight:normal;color:red;"> Password</label>
+                            <br/>
+                            <input type="text" class="" id="loginpass" placeholder="Enter your valid password" style="width:95%;"> <br/>
+
+                        </div>
+
+                        <center>
+                            <button class="w3-btn" id="loginButton" type="submit" style="background-color:green;border-radius:20px;max-width:175px;width:85%;border: 1px solid #fff;color:#fff;height:38px;">SIGN - UP</button>
+                        </center>
+
+                        <div class="w3-section">
+
+                            <p class="" style="float:left;border:8px;margin-bottom:20px;"> Forgot Password?</p>
+                        </div>
+                    </form>
+
+
+                    <!----End of Progress bar-->
+
+
+                </div>
+
+            </div>
+            <!---End of signup form modal --->
+
+
+
+            <div id="signupmodal" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                <div class="w3-modal-content w3-animate-zoom" class="login-form" style="max-width:28em;margin-top:0%;position:relative;background-color:#fff;">
+
+
+                    <div class="w3-center" style="background-color:transparent;padding-bottom:15px;">
+
+
+
+                        <h4 style="color:#036696;font-family:segoe ui light;margin-bottom:10px;margin-top:10px;text-transform:uppercase;font-weight:800;">
+                            Create Account
+                        </h4>
+
+                    </div>
+
+                    <!---sign up  modal beginning --->
+                    <form class="w3-container" id="create_account_form" method="post" action="signupfinal.php" style="background-color:#fff;width:100%;">
+
+
+
+                        <h4 class="w3-center" style="color:#036696;font-family:segoe ui light;margin-bottom:10px;margin-top:10px;text-transform:uppercase;font-weight:800;">
+                            Step 1 of 4--
+                        </h4>
+
+
+                        <div class="w3-padding"><label style="float:left;color:gray"> First Name </label></div>
+                        <div class="w3-padding"><input class="w3-margin-bottom" type="text" placeholder="Enter your first name" id="firstname" name="firstname" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;"></div>
+                        <div class="w3-padding"><label id="errorfname" style=";color:red;display:none;">First name is required</label></div>
+
+                        <div class="w3-padding"><label style="float:left;color:gray"> Last  Name</label></div>
+                        <div class="w3-padding"><input class="w3-margin-bottom" type="text" placeholder="Enter your last name" id="lastname" name="lastname" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;">
+
+                            <div class="w3-padding"><label id="errorlname" style="color:red;display:none;">Last name is required</label></div>
+
+
+                            <span class="" onclick="document.getElementById('signupmodal').style.display='none'" style="background-color:transparent;margin-top:24px;color:red;float:left;">
+		          <i class="fa fa-arrow-left">  </i> Back
+		       </span>
+
+                            <span id="forwardtoStep2" class="" style="padding-top:5px;padding-left:5px;padding-right:5px;background-color:green;border-radius:10px;min-height:30px;min-width:80px;margin-top:24px;border: 1px solid #fff;color:#fff;float:right;">
+		  
+		         NEXT
+		        <i class="fa fa-arrow-right">  </i>  
+		       </span>
+
+
+                            <label id="signuperror" style="display:none;background:red;margin-top:2em;"></label>
+
+
+
+
+                            <div id="signupmodal2" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                                <div class="w3-modal-content w3-animate-zoom login-form" style="max-width:28em;margin-top:3%;position:relative;background-color:#fff;">
+
+
+                                    <div class="w3-center" style="background-color:#fff;padding-bottom:15px;">
+
+                                        <h4 style="color:#036696;font-family:segoe ui light;margin-bottom:10px;margin-top:10px;text-transform:uppercase;font-weight:800;">
+                                            Step 2 of 4
+                                        </h4>
+
+                                    </div>
+                                    <center>
+                                        <div><label style="float:left;color:gray"> Phone Number</label></div>
+                                        <div><input class="w3-margin-bottom" type="text" placeholder="Enter your phone number" id="phone" name="phone" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;"></div>
+                                        <div><label id="phoneerror" style="color:red;"></label></div>
+
+                                        <div><label style="float:left;color:gray"> Your Email </label></div>
+                                        <div><input class="w3-margin-bottom" type="text" placeholder="Enter your email" id="email" name="email" style="outline:none;background-color:transparent;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;"></div>
+                                        <div><label id="emailerror" style="color:red;"></label></div>
+
+
+                                        <span id="backtoStep1" class="" onclick="document.getElementById('signupmodal2').style.display='none'" style="background-color:transparent;margin-top:24px;color:red;float:left;">
+		    <i class="fa fa-arrow-left"></i> Back
+		  </span>
+
+                                        <span id="forwardtoStep3" class="" style="padding-top:5px;padding-left:5px;padding-right:5px;background-color:green;border-radius:10px;min-height:30px;min-width:80px;margin-top:24px;border: 1px solid #fff;color:#fff;float:right;">
+		  
+		    NEXT
+		   <i class="fa fa-arrow-right">  </i>  
+		  </span>
+                                        <label id="signuperror" style="display:none;background:red;margin-top:2em;"></label>
+
+
+                                    </center>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <div id="signupmodal3" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                                <div class="w3-modal-content w3-animate-zoom login-form" style="max-width:28em;margin-top:3%;position:relative;background-color:#fff;">
+
+
+                                    <div class="w3-center" style="background-color:#fff;padding-bottom:15px;">
+
+
+                                        <h4 style="color:#036696;font-family:segoe ui light;margin-bottom:10px;margin-top:10px;text-transform:uppercase;font-weight:800;">
+                                            Step 3 of 4
+                                        </h4>
+
+                                    </div>
+                                    <center>
+
+                                        <div><label style="float:left;color:gray"> Username</label></div>
+                                        <div><input class="w3-margin-bottom" type="text" placeholder="Enter Username" id="user" name="user" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;"></div>
+                                        <div><label id="usererror" style="color:red;"></label></div>
+
+                                        <div><label style="float:left;color:gray"> Password</label></div>
+                                        <div><input class="w3-margin-bottom" type="password" placeholder="Enter Password" id="pass" name="pass" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;"
+                                            /></div>
+                                        <div><label id="passerror" style="color:red;"></label></div>
+
+                                        <span id="backtoStep2" class="" onclick="document.getElementById('signupmodal3').style.display='none'" style="background-color:transparent;margin-top:24px;color:red;float:left;">
+		 <i class="fa fa-arrow-left">  </i> Back
+		  </span>
+
+                                        <span id="forwardtoStep4" class="" style="padding-top:5px;padding-left:5px;padding-right:5px;background-color:green;border-radius:10px;min-height:30px;min-width:80px;margin-top:24px;border: 1px solid #fff;color:#fff;float:right;">
+		  
+		 NEXT
+		   <i class="fa fa-arrow-right">  </i>  
+		  </span>
+                                        <label id="signuperror" style="display:none;background:red;margin-top:2em;"></label>
+
+
+                                    </center>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <div id="signupmodal4" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                                <div class="w3-modal-content w3-animate-zoomlogin-form" style="max-width:28em;margin-top:3%;position:relative;background-color:#fff;">
+
+
+                                    <div class="w3-center" style="background-color:#fff;padding-bottom:15px;">
+
+
+
+
+                                        <h4 style="color:#036696;font-family:segoe ui light;margin-bottom:10px;margin-top:10px;text-transform:uppercase;font-weight:800;">
+                                            Step 4 of 4
+                                        </h4>
+
+                                    </div>
+                                    <center>
+
+
+                                        <div><label style="float:left;color:gray">  Profile Picture </label></div>
+                                        <div><input class="w3-margin-bottom" type="file" placeholder="Enter your full name" id="profile_picture" name="profile_pic" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;"></div>
+                                        <div><label id="profileerror" style="float:left;color:red"></label></div>
+
+
+                                        <div><label style="float:left;color:gray"> Account Type</label></div>
+                                        <div><input class="w3-margin-bottom" type="text" placeholder="Enter your account type" id="accounttype" name="accounttype" style="outline:none;width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;color:gray;outline:none;font-size17px;"></div>
+                                        <div><label id="accounterror" style="float:left;color:red"></label></div>
+
+
+                                        <span id="createaccountButton" class="w3-btn" style="background-color:green;border-radius:20px;width:60%;margin-top:28px;border: 1px solid #fff;color:#fff;margin-bottom:14px;">
+		  
+		    CREATE  
+		  
+		  </span>
+                                        <br/>
+
+                                        <span id="backtoStep3" class="" onclick="document.getElementById('signupmodal4').style.display='none'" style="background-color:transparent;margin-top:24px;color:red;">
+		 <i class="fa fa-arrow-left">  </i> Back
+		  </span>
+
+                                        <label id="signuperror" style="display:none;background:red;margin-top:2em;"></label>
+
+
+                                    </center>
+
+                                </div>
+
+
+                            </div>
+
+                            <div id="loadingmodal" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+                                <div class="w3-display-middle">
+                                    <div class="loader"></div>
+                                    <h3 id="statusHeader" class="w3-center" style="color:#036696;;font-family:segoe ui light;font-weight:800;">
+                                        <img src="icon.png" class="loader" style="height:60px;width:60px;margin-bottom:7px;" />
+                                        <br/> Loading
+                                    </h3>
+                                </div>
+                            </div>
+
+
+
+                            <div id="accountcreatedSuccessfulModal" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+                                <div class="w3-display-middle">
+                                    <h4 id="statusHeader" class="w3-center" style="color:#036696;;font-family:segoe ui light;font-weight:800;">
+                                        <span class="fa fa-thumbs-o-up" style="font-size:30px;"></span>
+                                        <br/> Congrats!
+                                        <br/> Your account has been created
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <div id="logginuserModal" class="w3-modal" style="border-bottom:0px;background-color:#fff;z-index:99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+                                <div class="w3-display-middle">
+
+                                    <h4 id="statusHeader" class="w3-center" style="color:#036696;;font-family:segoe ui light;font-weight:800;">
+                                        <img src="icon.png" class="loader" style="height:60px;width:60px;margin-bottom:7px;" />
+                                        <br/> You are being logged in...
+                                    </h4>
+                                </div>
+                            </div>
+
+                    </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <!---End of signup form modal --->
+
+
+
+            <!---End of signup form modal --->
+
+
+            <div id="uploadmodal" class="w3-modal" style="background-color:rgba(0, 0, 0, 0.7);z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom upload-form" style="max-width:30em;position:relative;background-color:#fff;">
+
+                    <div class="w3-center" style="background-color:#036696;padding-bottom:15px;">
+
+                        <span onclick="document.getElementById('uploadmodal').style.display='none'" class="w3-button w3-hover-red w3-display-topright" title="Close 
+              Modal" style="background-color:transparent;color:red;font-size:1.8em;">&times;</span>
+                        <br/>
+                        <h3 style="color:#fff;font-family:segoe ui light;margin-bottom:20px;margin-top:10px;text-transform:uppercase;">
+                            UPLOAD MUSIC
+                        </h3>
+
+                    </div>
+
+                    <form class="w3-container" id="uploadform" method="POST" action="uploadaudiovideo.php" enctype="multipart/form-data" style="background-color:transparent;width:100%;">
+
+                        <div class="w3-section">
+                            <center>
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Song Title</b></label>
+
+                                <input type="text" class="w3-margin-bottom" name="song" id="songs" placeholder="File Title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Artist  </b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Song Picture</b></label>
+                                <input class="w3-margin-bottom" type="file" id="image_file" name="image_file" style="width:90%;border-radius:1px;border-bottom:none;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+                                <p class="errorholder" id="picfiletype" style="color:red;display:none"><strong>ERROR</strong> Type of image should be either jpeg,png or jpg</p>
+                                <p class="errorholder" id="picfilesize" style="color:red;display:none"><strong>ERROR</strong> Image size should not exceed 5 mb</p>
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Song   file</b></label>
+                                <input type="file" class="w3-margin-bottom" id="song_file" name="song_file" style="width:90%;border-radius:1px;border-bottom:none;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+                                <label class="errorholder" id="songfiletype" style="color:red;display:none"><strong>ERROR</strong> Type of song should be either mp3,mp4,flv or avi</label>
+                                <label class="errorholder" id="songfilesize" style="color:red;display:none;"><strong>ERROR</strong> The size of the song should not exceed 12mb</label>
+
+                                <input type="submit" name="Submit" value="Submit" id="uploadbutton" style="background-color:green;color:#fff;height:35px;width:120px;border-radius:15px;border:none;">
+
+                            </center>
+
+                        </div>
+
+                    </form>
+
+                    <!----Beginning of Progress bar-->
+
+
+                    <!----End of Progress bar-->
+
+
+                </div>
+
+            </div>
+            <!---End of signup form modal --->
+
+
+            <div id="sermonmodal" class="w3-modal" style="margin-top:-40px;background-color:rgba(0, 0, 0, 0.7);z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom upload-form" style="max-width:30em;position:relative;background-color:#fff;">
+
+                    <div class="w3-center" style="background-color:#036696;padding-bottom:15px;">
+
+                        <span onclick="document.getElementById('sermonmodal').style.display='none'" class="w3-button w3-hover-red w3-display-topright" title="Close 
+              Modal" style="background-color:transparent;color:red;font-size:1.8em;">&times;</span>
+                        <br/>
+                        <h3 style="color:#fff;font-family:segoe ui light;margin-bottom:20px;margin-top:10px;text-transform:uppercase;">
+                            UPLOAD SERMON
+                        </h3>
+
+                    </div>
+
+                    <form class="w3-container" id="sermonform" method="POST" action="uploadaudiovideo.php" enctype="multipart/form-data" style="background-color:transparent;width:100%;">
+
+                        <div class="w3-section">
+                            <center>
+                                <h5 style="font-family:gabriola;color:gray;margin-top:20px;text-transform:uppercase;"> Upload Your Sermon </h5>
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Sermon Title</b></label>
+
+                                <input type="text" class="w3-margin-bottom" name="song" id="songs" placeholder="File Title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>  Preacher  </b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Sermon Picture</b></label>
+                                <input class="w3-margin-bottom" type="file" id="image_file" name="image_file" style="width:90%;border-radius:1px;border-bottom:none;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+                                <p class="errorholder" id="picfiletype" style="color:red;display:none"><strong>ERROR</strong> Type of image should be either jpeg,png or jpg</p>
+                                <p class="errorholder" id="picfilesize" style="color:red;display:none"><strong>ERROR</strong> Image size should not exceed 5 mb</p>
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Sermon   file</b></label>
+                                <input type="file" class="w3-margin-bottom" id="song_file" name="song_file" style="width:90%;border-radius:1px;border-bottom:none;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+                                <label class="errorholder" id="songfiletype" style="color:red;display:none"><strong>ERROR</strong> Type of song should be either mp3,mp4,flv or avi</label>
+                                <label class="errorholder" id="songfilesize" style="color:red;display:none;"><strong>ERROR</strong> The size of the song should not exceed 12mb</label>
+
+                                <input type="submit" name="Submit" value="Submit" id="uploadbutton" style="background-color:green;color:#fff;height:35px;width:120px;border-radius:15px;border:none;">
+
+                            </center>
+
+                        </div>
+
+                    </form>
+
+                    <!----Beginning of Progress bar-->
+
+
+                    <!----End of Progress bar-->
+
+
+                </div>
+
+            </div>
+            <!---End of signup form modal --->
+
+            <div id="eventmodal" class="w3-modal" style="margin-top:-40px;background-color:rgba(0, 0, 0, 0.7);z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999">
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" class="upload-form" style="max-width:30em;position:relative;background-color:#fff;">
+
+                    <div class="w3-center" style="background-color:#036696;padding-bottom:15px;">
+
+                        <span onclick="document.getElementById('eventmodal').style.display='none'" class="w3-button w3-hover-red w3-display-topright" title="Close 
+              Modal" style="background-color:transparent;color:red;font-size:1.8em;">&times;</span>
+                        <br/>
+                        <h3 style="color:#fff;font-family:segoe ui light;margin-bottom:20px;margin-top:10px;text-transform:uppercase;">
+                            CREATE EVENT
+                        </h3>
+
+                    </div>
+
+                    <form class="w3-container" id="eventform" method="POST" action="uploadaudiovideo.php" enctype="multipart/form-data" style="background-color:transparent;width:100%;">
+
+                        <div class="w3-section">
+                            <center>
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>  EVENT TITLE</b></label>
+
+                                <input type="text" class="w3-margin-bottom" name="song" id="songs" placeholder="File Title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>   EVENT DESCRIPTOPN  </b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>  VENUE  </b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>  DATE & TIME </b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b> Admission</b></label>
+                                <input type="text" class="w3-margin-bottom" name="album" id="album" placeholder="File title" style="width:90%;border-radius:1px;border-bottom:2px solid gray;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+
+                                <label style="color:gray;float:left;text-transform:uppercase;"><b>Event Picture</b></label>
+                                <input class="w3-margin-bottom" type="file" id="image_file" name="image_file" style="width:90%;border-radius:1px;border-bottom:none;border-right:none;border-left:none;border-top:none;height:28px;margin-bottom:10px;">
+                                <p class="errorholder" id="picfiletype" style="color:red;display:none"><strong>ERROR</strong> Type of image should be either jpeg,png or jpg</p>
+                                <p class="errorholder" id="picfilesize" style="color:red;display:none"><strong>ERROR</strong> Image size should not exceed 5 mb</p>
+
+
+                                <input type="submit" name="Submit" value="Submit" id="uploadbutton" style="background-color:green;color:#fff;height:35px;width:120px;border-radius:15px;border:none;">
+
+                            </center>
+
+                        </div>
+
+                    </form>
+
+                    <!----Beginning of Progress bar-->
+
+
+                    <!----End of Progress bar-->
+
+
+                </div>
+
+            </div>
+            <!---End of eventmodal form modal --->
+
+
+
+            <!----Modal for alert status for upload of music-->
+
+            <div id="progressHolder" class="w3-modal" style="z-index:2000;">
+
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" class="upload-form" style="width:40em;">
+
+                    <div class="w3-center"><br>
+
+                        <span onclick="document.getElementById('progressHolder').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close 
+              Modal" style="background:white;color:red;">&times;</span>
+
+                    </div>
+
+
+
+                    <div style="padding:2em 2em 2em 2em;">
+
+                        <div>
+                            <h4 id="titlehead"></h4>
+                        </div>
+                        <div id="progressBar" style="display:block;height:30px;"> </div>
+                        <div>
+                            <p id="imagefileerror"></p>
+                        </div>
+                        <div>
+                            <p id="songfileerror"></p>
+                        </div>
+                        <div>
+                            <p id="uploadfilestatus"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!----Modal for alert status for upload of music-->
+
+
+
+
+            <!----Modal for alert status for upload of music-->
+
+            <div id="uploadfilesstatus" class="modal fade">
+
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+
+                        <center>
+
+                            <div class="modal-body">
+
+                                <h5 id="statusheader" class="modal-title"></h5>
+
+                                <button type="button" class="btn btn-default w3-green" data-dismiss="modal">Close</button>
+
+                            </div>
+
+
+                        </center>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+</body>
+
+</html>
